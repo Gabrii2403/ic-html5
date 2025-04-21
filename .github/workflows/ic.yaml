@@ -26,3 +26,4 @@ jobs:
         surge --project ./_build --domain tu-nombre.surge.sh
       env:
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+
