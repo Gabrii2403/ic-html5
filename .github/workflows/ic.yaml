@@ -2,17 +2,17 @@ name: CI and Deploy
 on:
   push:
     branches:
-      - master  # Asegúrate de que esté "master" aquí si usas esta rama
+      - master
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Install Node.js and HTML5 Validator
+    - name: Install Node.js, Surge, and HTML5 Validator
       run: |
         sudo apt-get update
         sudo apt-get install -y npm
-        npm install -g html5-validator
+        npm install -g surge html5-validator
     - name: HTML5 Validation
       run: |
         html5-validator index.html
