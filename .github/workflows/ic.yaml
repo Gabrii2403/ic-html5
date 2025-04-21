@@ -2,7 +2,7 @@ name: CI and Deploy
 on:
   push:
     branches:
-      - main
+      - master  # Asegúrate de que esté "master" aquí si usas esta rama
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -26,4 +26,3 @@ jobs:
         surge --project ./_build --domain tu-nombre.surge.sh
       env:
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-
